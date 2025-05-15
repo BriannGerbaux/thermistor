@@ -1,32 +1,14 @@
-# _Sample project_
+# _ESP32 Thermistor sensor_
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+This project reads a temperature from a sensor and displays it on the monitor output.
+It is made with the ESP-IDF framework.
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+# How does it work
+The thermistor resistance changes depending on it's temperature. Knowing that, we can use a voltage divider connected to an ADC port on the esp32 board and compute the current resistance of the thermistor.
+With the current thermistor resistance value, and the thermistor known resistance at 25°C, we can now calculate the current room temperature and display it.
 
+# The board connectics
+![20250515_110208](https://github.com/user-attachments/assets/73ca9543-6555-4e2b-a377-0ccdd13d369a)
 
-
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
-
-## Example folder contents
-
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
-
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
-
-Below is short explanation of remaining files in the project folder.
-
-```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
-```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
+# Schematics
+![circuit](https://github.com/user-attachments/assets/b0719a2d-27a4-4f13-8e95-496206128a25)
